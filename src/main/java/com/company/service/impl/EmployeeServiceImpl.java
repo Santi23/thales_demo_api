@@ -57,7 +57,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         return result;
     }
 
-    private EmployeeThalesDTO calculateAnnualSalaryForEmployee(EmployeeApiDTO employeeApiDTO){
+    public EmployeeThalesDTO calculateAnnualSalaryForEmployee(EmployeeApiDTO employeeApiDTO){
         if(employeeApiDTO == null){
             return null;
         }
@@ -70,7 +70,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         return transformed;
     }
 
-    private List<EmployeeThalesDTO> loadEmployeesFromJSON() {
+    public List<EmployeeThalesDTO> loadEmployeesFromJSON() {
         try (InputStream inputStream = getClass().getResourceAsStream("/static/employees.json")) {
             JsonNode root = objectMapper.readTree(inputStream);
             List<EmployeeApiDTO> result = objectMapper.convertValue(root.get("data"), new TypeReference<List<EmployeeApiDTO>>() {});

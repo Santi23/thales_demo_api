@@ -46,33 +46,5 @@
             </tbody>
         </table>
     </div>
-
-    <!--h2>Search employee</h2>
-
-
-    <form th:action="@{/employees}" method="get">
-        <label for="employeeId">Employee ID:</label>
-        <input type="text" id="employeeId" name="id" th:value="${searchId}">
-        <button type="submit">Search</button>
-        <button type="submit" th:formaction="@{/employees}">Show All</button>
-    </form>
-
-    <h2>Employee List</h2>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Salary</th>
-            <th>Annual Salary</th>
-            <th>Age</th>
-        </tr>
-        <tr th:each="employee : ${employees}">
-            <td th:text="${employee.id}"></td>
-            <td th:text="${employee.employeeName}"></td>
-            <td th:text="${employee.employeeSalary}"></td>
-            <td th:text="${employee.employeeAnnualSalary}"></td>
-            <td th:text="${employee.employeeAge}"></td>
-        </tr>
-    </table-->
 </body>
 </html>

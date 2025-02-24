@@ -28,6 +28,8 @@ public class EmployeeModelController {
                     .filter(emp -> emp.getId() == id)
                     .collect(Collectors.toList());
             model.addAttribute("searchId", id);
+        }else {
+            model.addAttribute("searchId", null);
         }
 
         model.addAttribute("employees", employees);
