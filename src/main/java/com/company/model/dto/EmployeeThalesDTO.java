@@ -1,14 +1,24 @@
 package com.company.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
 public class EmployeeThalesDTO {
-
     private Long id;
-    private String employee_name;
-    private int employee_age;
-    private String profile_image;
-    private Long employee_salary;
-    private Long employee_annual_salary;
+
+    @JsonProperty("employee_name")
+    private String employeeName;
+
+    @JsonProperty("employee_age")
+    private int employeeAge;
+
+    @JsonProperty("profile_image")
+    private String profileImage;
+
+    @JsonProperty("employee_salary")
+    private Long employeeSalary;
+
+    @JsonProperty("employee_annual_salary")
+    private Long employeeAnnualSalary;
 }

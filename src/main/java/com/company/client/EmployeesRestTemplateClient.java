@@ -28,18 +28,12 @@ public class EmployeesRestTemplateClient {
 
     public List<EmployeeApiDTO> getEmployeesForApiRestTemplate() {
         HttpEntity<String> entity = new HttpEntity<>(generateHeaders());
-
-        try{
             ResponseEntity<ResponseEmployeesApiDTO> response = restTemplate.exchange(
                     URLConstant.API_EXTERN_EMPLOYEES,
                     HttpMethod.GET,
                     entity,
                     ResponseEmployeesApiDTO.class);
             return response.getBody().getData();
-        } catch (RestClientException e) {
-            e.printStackTrace();
-            return new ArrayList<>();
-        }
     }
 
     public EmployeeApiDTO getEmployeeByIdForApiRestTemplate(Long id){
