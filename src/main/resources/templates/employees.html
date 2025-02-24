@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Search</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <script>
+        function clearAndSubmit() {
+            document.getElementById("employeeId").value = "";
+            document.forms[0].submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-primary">Search Employee</h2>
+        <form th:action="@{/employees}" method="get" class="mb-3">
+            <div class="input-group">
+                <input type="text" id="employeeId" name="id" th:value="${searchId}" class="form-control" placeholder="Enter Employee ID">
+                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-secondary" th:formaction="@{/employees}">Show All</button>
+            </div>
+        </form>
+
+        <h2 class="text-success">Employee List</h2>
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Annual Salary</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.employeeName}"></td>
+                <td th:text="${employee.employeeSalary}"></td>
+                <td th:text="${employee.employeeAnnualSalary}"></td>
+                <td th:text="${employee.employeeAge}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--h2>Search employee</h2>
+
+
+    <form th:action="@{/employees}" method="get">
+        <label for="employeeId">Employee ID:</label>
+        <input type="text" id="employeeId" name="id" th:value="${searchId}">
+        <button type="submit">Search</button>
+        <button type="submit" th:formaction="@{/employees}">Show All</button>
+    </form>
+
+    <h2>Employee List</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Annual Salary</th>
+            <th>Age</th>
+        </tr>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.employeeName}"></td>
+            <td th:text="${employee.employeeSalary}"></td>
+            <td th:text="${employee.employeeAnnualSalary}"></td>
+            <td th:text="${employee.employeeAge}"></td>
+        </tr>
+    </table-->
+</body>
+</html>
