@@ -84,6 +84,10 @@ http://localhost:8080/thales-1.1/
 15. **Monitoring:** Implement **Dynatrace, Prometheus or Grafana**.
 
 ---
+## Example Angular Frontend App that consumes this application as a API
+
+[See frontend project here](https://github.com/Santi23/app-thales-employees-frontend/commits/master/)
+---
 
 ## Contact
 
